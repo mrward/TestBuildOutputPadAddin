@@ -1,0 +1,28 @@
+﻿<ExtensionModel>
+  <Runtime>
+    <Import assembly="TestBuildOutputPadAddin.dll" />
+  </Runtime>
+
+  <Extension path="/MonoDevelop/Ide/Commands">
+    <Category id="TestBuildOutputPad" _name="Test Build Output Pad">
+      <Command
+        id="TestBuildOutputPadAddin.AddBuildOutput"
+        _label="Add Build Output"
+        defaultHandler="TestBuildOutputPadAddin.AddBuildOutputHandler" />
+      <Command
+        id="TestBuildOutputPadAddin.StopBuildOutput"
+        _label="Stop Adding Build Output"
+        defaultHandler="TestBuildOutputPadAddin.StopBuildOutputHandler" />
+    </Category>
+  </Extension>
+
+  <Extension path="/MonoDevelop/Ide/MainMenu/Tools">
+    <SeparatorItem
+      id="TestBuildOutputPadSectionStartSeparator"
+      insertafter="OptionsSection"
+      _label="Test Build Output Pad" />
+    <CommandItem id="TestBuildOutputPadAddin.AddBuildOutput" />
+    <CommandItem id="TestBuildOutputPadAddin.StopBuildOutput" />
+    <SeparatorItem id="TestBuildOutputPadSectionEndSeparator" />
+  </Extension>
+</ExtensionModel>
